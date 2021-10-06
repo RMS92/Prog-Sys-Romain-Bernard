@@ -7,10 +7,15 @@
 
 int running = 1;
 
+void exit_message()
+{
+    printf("Fin du programme\n");
+}
+
 void stop_handler(int sig)
 {
     printf("Numéro du signal: %d\n", sig);
-    //running = 0;
+    running = 0;
 }
 
 int main()
@@ -36,6 +41,8 @@ int main()
     }
 
     printf("Je suis la fin de la boucle infinie.\n");
+
+    atexit(exit_message);
 
     return EXIT_SUCCESS;
 }
