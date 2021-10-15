@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <time.h>
 #include <signal.h>
-#include <sys/types.h>
 
 int running = 1;
 
@@ -20,9 +19,9 @@ void stop_handler(int sig)
 
 int main()
 {
-    struct sigaction s;
-
     srand(time(NULL));
+    
+    struct sigaction s;
 
     s.sa_handler = stop_handler;
 
