@@ -20,7 +20,7 @@ void stop_handler(int sig)
 int main()
 {
     srand(time(NULL));
-    
+
     struct sigaction s;
 
     s.sa_handler = stop_handler;

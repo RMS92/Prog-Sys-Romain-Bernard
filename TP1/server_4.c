@@ -24,7 +24,6 @@ void kill_child(int sig)
     printf("Numéro du signal du meurtre du fils: %d\n", sig);
     printf("Meurtre du fils\n");
     kill(child_pid, SIGTERM);
-    printf("Meurtre du père\n");
     exit(EXIT_SUCCESS);
 }
 
@@ -74,6 +73,7 @@ int main()
             // Close the read side
             close(pfd[1]);
 
+            // read data of the parent
             read(pfd[0], &alea2, sizeof(int));
 
             printf("Lecture du nombre aléatoire du père: %d\n", alea2);
@@ -98,7 +98,7 @@ int main()
             close(pfd[1]);
         }
 
-        sleep(50);
+        sleep(1);
     }
 
     printf("Je suis la fin de la boucle infinie.\n");
