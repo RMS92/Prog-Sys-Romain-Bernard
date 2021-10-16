@@ -18,7 +18,7 @@ void stop_handler(int sig)
     running = 0;
 }
 
-int main(void)
+int main()
 {
     srand(time(NULL));
 
